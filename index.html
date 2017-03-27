@@ -1,1 +1,45 @@
-Hello Git Hub Page
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Angular 256</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="lib/bootstrap.css"></link>
+  <link rel="stylesheet" href="css/style.css"></link>
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/angular.js"></script>
+  <script type="text/javascript" src="lib/angular-animate.js"></script>
+
+  <script type="text/javascript" src="js/homectrl.js"></script>
+</head>
+<body ng-app="256App">
+  <div class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Angular 256</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h1>Angular 256</h1>
+    </div>
+  </div>
+
+  <div class="container" ng-controller="gameController">
+    <div class="row" ng-init="init()">
+
+      <table class="game-screen" tabindex="1" ng-keydown="gameLoop($event)">
+        <tr ng-repeat="sheetAry in sheetTable">
+          <td ng-repeat="sheet in sheetAry">
+            <div class="sheet">
+              <div ng-if="sheet.hasBlock" id="{{sheet.block.id}}" class="block" ng-class="sheet.block.animation">{{sheet.block.point}}
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>
